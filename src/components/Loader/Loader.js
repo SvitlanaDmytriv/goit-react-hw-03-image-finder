@@ -1,13 +1,13 @@
 import Spinner from 'react-loader-spinner';
-import styles from '../Loader/Loader.module.css';
+import s from '../Loader/Loader.module.css';
 
 const Loader = () => (
-  <div className={styles.loader}>
+  <div className={s.loader}>
     <Spinner
-      type="Circles"
+      type="Audio"
       color="#00BFFF"
-      height={80}
-      width={80}
+      height={180}
+      width={180}
       timeout={3000}
     />
   </div>

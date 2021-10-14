@@ -1,4 +1,4 @@
 .loader {
-  display: grid;
-  place-content: center;
+  margin-top: 150px;
+  text-align: center;
 }
