@@ -1,8 +1,8 @@
 import Spinner from 'react-loader-spinner';
-import s from '../Loader/Loader.module.css';
+import s from './Loader.module.css';
 
 const Loader = () => (
-  <div className={s.loader}>
+  <div className={s.Loader}>
     <Spinner
       type="Audio"
       color="#00BFFF"
