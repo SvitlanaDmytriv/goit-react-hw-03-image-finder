@@ -19,12 +19,12 @@ class Searchbar extends Component {
       return;
     }
     this.props.onSubmit(value);
-    this.resetForm();
+    // this.resetForm();
   };
 
-  resetForm = () => {
-    this.setState({ value: '' });
-  };
+  // resetForm = () => {
+  //   this.setState({ value: '' });
+  // };
 
   render() {
     const { handleChange, handleSubmit } = this;

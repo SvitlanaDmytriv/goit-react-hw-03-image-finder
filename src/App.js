@@ -21,15 +21,10 @@ class App extends Component {
     showMessage: false,
   };
 
-  componentDidMount() {
-    this.setState({ isLoading: true });
-    fetchImg()
-      .then(data => this.setState({ images: data.data.hits }))
-      .catch(err => this.setState({ showMessage: true }))
-      .finally(() => this.setState({ isLoading: false }));
-  }
-
   componentDidUpdate(prevProps, prevState) {
+    if (this.state.page !== 2) {
+      this.scrollOnLoadButton();
+    }
     if (prevState.value !== this.state.value) {
       this.fetchData();
     }
@@ -48,9 +43,6 @@ class App extends Component {
           images: [...prevState.images, ...data.data.hits],
           page: prevState.page + 1,
         }));
-        if (page !== 1) {
-          this.scrollOnLoadButton();
-        }
       })
       .catch(err => this.setState({ showMessage: true }))
       .finally(() => {
@@ -66,7 +58,7 @@ class App extends Component {
   };
 
   handleFormSubmit = valueInput => {
-    this.setState({ images: [], value: valueInput });
+    this.setState({ images: [], value: valueInput, page: 1 });
   };
 
   toggleModal = () => {
